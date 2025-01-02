@@ -1,0 +1,21 @@
+// Este é o arquivo de configuração do Prisma para o esquema do banco de dados
+// Para mais informações: https://pris.ly/d/prisma-schema
+
+// Geração do cliente Prisma para acesso ao banco
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Configuração da conexão com o banco de dados
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Lê a URL do banco a partir do arquivo .env
+}
+
+// Modelo "Product" que define a tabela de produtos
+model Product {
+  id         Int     @id @default(autoincrement()) // ID único, gerado automaticamente
+  nome       String  // Nome do produto
+  preco      Float   // Preço do produto
+  quantidade Int     // Quantidade disponível em estoque
+}

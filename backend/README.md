@@ -12,7 +12,7 @@ Prisma CLI: Será instalado automaticamente, mas o Prisma é necessário para ge
 
 
 2. Instalando Dependências
-Na raiz do projeto, execute o comando para instalar todas as dependências do backend:
+Na raiz do projeto backend, execute o comando para instalar todas as dependências do backend:
 
 npm install
 
@@ -44,5 +44,5 @@ Esse comando vai gerar a tabela de produtos no banco de dados de acordo com a de
 5. Rodando o Backend
 Execute o comando abaixo para iniciar o servidor:
 
-npm run start
+npm run start:dev
 Por padrão, a API estará rodando em http://localhost:3001.

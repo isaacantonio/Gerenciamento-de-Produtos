@@ -19,3 +19,17 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Estilo para centralizar o ícone de carregamento */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Centraliza o campo de pesquisa */
+input.p-inputtext {
+  display: block;
+  margin: 0 auto;
+}

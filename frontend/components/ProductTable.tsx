@@ -20,6 +20,7 @@ type ProductTableProps = {
 };
 
 export default function ProductTable({ products, onEdit, onDelete }: ProductTableProps) {
+    console.log(products);
     const handleDelete = (event: React.MouseEvent, productId: number) => {
         confirmPopup({
             target: event.currentTarget as HTMLElement,
@@ -37,6 +38,7 @@ export default function ProductTable({ products, onEdit, onDelete }: ProductTabl
             <ConfirmPopup />
             <DataTable
                 value={products}
+                emptyMessage="Nenhum produto cadastrado"
                 paginator
                 rows={5}
                 rowsPerPageOptions={[5, 10]}
@@ -54,7 +56,7 @@ export default function ProductTable({ products, onEdit, onDelete }: ProductTabl
                         <div className="action-buttons">
                             <Button
                                 label="Editar"
-                                className="p-button-warning p-mr-2"
+                                className="p-button-edit p-mr-2"
                                 onClick={() => onEdit(rowData.id)}
                             />
                             <Button

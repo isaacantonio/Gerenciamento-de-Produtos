@@ -67,7 +67,7 @@ export default function FormProduct({ productId, onClose }: FormProductProps) {
     }, [productId]);
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="product-form" onSubmit={handleSubmit(onSubmit)}>
             <div>
                 <label>Nome</label>
                 <Controller
@@ -90,8 +90,11 @@ export default function FormProduct({ productId, onClose }: FormProductProps) {
                             <InputNumber
                                 value={field.value}
                                 onValueChange={(e) => field.onChange(e.value || 0)}
-                                mode="decimal"
+                                mode="currency"
+                                currency="BRL"
+                                locale="pt-BR"
                                 inputClassName={fieldState.error ? 'p-invalid' : ''}
+                                onFocus={(e) => e.target.select()}
                             />
                             {fieldState.error && <small className="p-error">{fieldState.error.message}</small>}
                         </>
@@ -121,7 +124,7 @@ export default function FormProduct({ productId, onClose }: FormProductProps) {
                 />
             </div>
 
-            <Button label="Salvar" type="submit" />
+            <Button label="Salvar" type="submit" className='save-button-form' />
         </form>
     );
 }

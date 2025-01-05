@@ -18,6 +18,7 @@ export default function Modal({ visible, onHide, productId }: ModalProps) {
             onHide={onHide}
             style={{ width: '50vw' }}
             draggable={false}
+            className='product-dialog'
         >
             <FormProduct productId={productId} onClose={onHide} />
         </Dialog>

@@ -1,139 +1,260 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #355474;
-  padding: 10px 20px;
-  color: rgb(255, 255, 255);
-}
-
-.project-title {}
-
-.project-title {
-  font-weight: bold;
-  color: #ebe3e3;
-  font-size: 2rem;
-  margin: 0;
-  color: rgb(255, 255, 255);
-  margin-top: 20px;
-  margin-bottom: 30px;
-  font-family: 'Arial', sans-serif;
-  margin-left: 25px;
-
-}
-
-.header-icons {
-  display: flex;
-  gap: 15px;
-  margin-right: 20px;
-}
-
-.header-icons .p-button-text {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.header-icons .p-button-text:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-}
+  body {
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
 
 
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #355474;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+  }
+
+
+  .project-title {
+    font-weight: bold;
+    color: #ebe3e3;
+    font-size: 2rem;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    margin-left: 25px;
+
+  }
+
+  .header-icons {
+    display: flex;
+    gap: 15px;
+    margin-right: 20px;
+  }
+
+  .header-icons .p-button-text {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .header-icons .p-button-text:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
+
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 3%;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  input#productsFilter {
+    margin-right: 40px;
+    width: 40% !important;
+  }
+
+  #createButton {
+    margin-left: 45px;
+  }
+
+  .p-datatable {
+    max-height: 30em;
+    overflow: hidden;
+    margin: 0 20px 10px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .p-datatable .p-datatable-wrapper {
+    max-height: 25em;
+    overflow-y: auto;
+  }
+
+  .p-dialog .p-dialog-header {
+    background-color: aliceblue;
+  }
+
+  .p-dialog .p-dialog-content {
+    background-color: aliceblue;
+  }
+
+  .column-id {
+    width: 13%;
+  }
+
+  .column-nome {
+    width: 49%;
+  }
+
+  .column-preco .column-quantidade {
+    width: 12%;
+  }
+
+  .column-acoes {
+    width: 15%;
+  }
+
+  .download {
+    background-color: #355474;
+  }
+
+  .p-datatable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .p-datatable .p-column {
+    position: sticky;
+    z-index: 2;
+    background-color: #fff;
+  }
+
+  .p-paginator {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    z-index: 10;
+    padding: 10px 0;
+  }
+
+  .flex-container .p-inputtext {
+    width: 300px;
+    margin-right: 20px;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    gap: 10px;
+  }
+
+  .product-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .product-form div {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .product-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .product-form input,
+  .product-form .p-inputnumber {
+    width: 100%;
+  }
+
+  .product-form .p-invalid {
+    border: 1px solid red !important;
+  }
+
+  .product-form .p-error {
+    color: red;
+    font-size: 0.875rem;
+  }
+
+  .save-button-form {
+    display: flex;
+    justify-content: flex-end;
+    /* width: 20%; */
+    background-color: #355474 !important;
+    color: #fff !important;
+    border: none;
+  }
+
+  .save-button-form:hover {
+    background-color: #4a6b92 !important;
+  }
+
+  .product-form .p-inputnumber input {
+    width: 100% !important;
+  }
+
+  .p-button-edit {
+    background-color: #355474 !important;
+    color: #fff !important;
+    border: none;
+  }
+
+  .p-button-edit:hover {
+    background-color: #4a6b92 !important;
+  }
 
 
 
+  @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
 
-.flex-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  margin-top: 3%;
-}
+    .button-container {
+      justify-content: space-between;
+    }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
+    #productsFilter {
+      order: 1;
+      align-items: center;
+      margin-bottom: 10px;
+    }
 
-input#productsFilter {
-  margin-right: 40px;
-  width: 40% !important;
-}
+    .button-container {
+      order: 2;
+      display: flex;
+      justify-content: center;
+      width: 50%;
+    }
 
-#createButton {
-  margin-left: 45px;
-}
+    .download {
+      flex: 0 1 20%;
+      font-size: 0.9rem;
+    }
 
-.p-datatable {
-  max-height: 30em;
-  overflow: hidden;
-  margin: 0 20px 10px;
-  border-radius: 8px;
-  position: relative;
-}
+    .flex-container .p-inputtext {
+      margin-right: 0;
+    }
 
-.p-datatable .p-datatable-wrapper {
-  max-height: 25em;
-  overflow-y: auto;
-}
+    input#productsFilter {
+      margin-right: 0;
+    }
 
-
-
-.column-id {
-  width: 13%;
-}
-
-.column-nome {
-  width: 49%;
-}
-
-.column-preco {
-  width: 12%;
-}
-
-.column-quantidade {
-  width: 12%;
-}
-
-.column-acoes {
-  width: 15%;
-}
-
-.p-datatable thead th {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.p-datatable .p-column {
-  position: sticky;
-  z-index: 2;
-  background-color: #fff;
-}
-
-.p-paginator {
-  position: sticky;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 10;
-  padding: 10px 0;
-}
-
-.flex-container .p-inputtext {
-  width: 300px;
-  margin-right: 20px;
-}
-
-.action-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  /* justify-content: center; */
-  gap: 10px;
-}
+    #createButton {
+      flex: 0 1 55%;
+      font-size: 0.9rem;
+      padding: 8px 10px;
+      margin-left: 0px;
+    }
+  }

@@ -39,7 +39,7 @@ Execute as migrações para criar a estrutura da tabela products no PostgreSQL:
 
 npx prisma migrate dev --name init
 
-Esse comando vai gerar a tabela de produtos no banco de dados de acordo com a definição no Prisma Schema.
+Esse comando vai gerar a tabela de produtos no banco de dados de acordo com a definição no Prisma Schema. So precisa fazer a primeira vez que for rodar o sistema
 
 5. Rodando o Backend
 Execute o comando abaixo para iniciar o servidor:

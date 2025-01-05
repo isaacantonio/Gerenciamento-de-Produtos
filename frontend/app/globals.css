@@ -1,35 +1,139 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Estilo para centralizar o ícone de carregamento */
-.loading-container {
+.header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
+  background-color: #355474;
+  padding: 10px 20px;
+  color: rgb(255, 255, 255);
 }
 
-/* Centraliza o campo de pesquisa */
-input.p-inputtext {
-  display: block;
-  margin: 0 auto;
+.project-title {}
+
+.project-title {
+  font-weight: bold;
+  color: #ebe3e3;
+  font-size: 2rem;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  margin-left: 25px;
+
+}
+
+.header-icons {
+  display: flex;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+.header-icons .p-button-text {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.header-icons .p-button-text:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+
+
+
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 3%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+input#productsFilter {
+  margin-right: 40px;
+  width: 40% !important;
+}
+
+#createButton {
+  margin-left: 45px;
+}
+
+.p-datatable {
+  max-height: 30em;
+  overflow: hidden;
+  margin: 0 20px 10px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.p-datatable .p-datatable-wrapper {
+  max-height: 25em;
+  overflow-y: auto;
+}
+
+
+
+.column-id {
+  width: 13%;
+}
+
+.column-nome {
+  width: 49%;
+}
+
+.column-preco {
+  width: 12%;
+}
+
+.column-quantidade {
+  width: 12%;
+}
+
+.column-acoes {
+  width: 15%;
+}
+
+.p-datatable thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.p-datatable .p-column {
+  position: sticky;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.p-paginator {
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.flex-container .p-inputtext {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 10px;
 }

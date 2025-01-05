@@ -35,11 +35,20 @@ export default function ProductTable({ products, onEdit, onDelete }: ProductTabl
     return (
         <>
             <ConfirmPopup />
-            <DataTable value={products} responsiveLayout="scroll">
-                <Column field="id" header="ID" />
-                <Column field="nome" header="Nome" />
-                <Column field="preco" header="Preço R$" />
-                <Column field="quantidade" header="Quantidade" />
+            <DataTable
+                value={products}
+                paginator
+                rows={5}
+                rowsPerPageOptions={[5, 10]}
+                paginatorPosition="bottom"
+                sortField="nome" // campo de ordenação
+                sortOrder={1}
+
+            >
+                <Column field="id" header="ID" className="column-id" />
+                <Column field="nome" header="Nome" className="column-nome" />
+                <Column field="preco" header="Preço R$" body={(rowData) => `R$ ${rowData.preco}`} className="column-preco" />
+                <Column field="quantidade" header="Quantidade" className="column-quantidade" />
                 <Column
                     body={(rowData) => (
                         <div className="action-buttons">

@@ -13,6 +13,8 @@ const fetchProducts = async () => {
   return data;
 };
 
+
+
 export default function HomePage() {
   const queryClient = useQueryClient();
   const [modalVisible, setModalVisible] = useState(false);
@@ -52,6 +54,12 @@ export default function HomePage() {
     queryClient.invalidateQueries({ queryKey: ['products'] });
   };
 
+  const deleteProduct = async (id: number) => {
+    await api.delete(`/produtos/${id}`);
+    queryClient.invalidateQueries({ queryKey: ['products'] });
+
+  }
+
   if (isLoading) return (
     <div className="loading-container">
       <i className="pi pi-spin pi-spinner" style={{ fontSize: '2rem' }}></i>
@@ -60,24 +68,44 @@ export default function HomePage() {
 
   return (
     <div>
-      <h1>Gerenciamento de Produtos</h1>
+      <header className="header">
+        <h1 className="project-title">Gerenciamento de Produtos</h1>
+        <div className="header-icons">
+          <Button icon="pi pi-bars" className="p-button-text" />
+          <Button icon="pi pi-user" className="p-button-text" />
+        </div>
+      </header>
 
-      <div style={{ marginBottom: '20px' }}>
+      <div className="flex-container">
+        <div className='button-container'>
+          <Button
+            id='createButton'
+            label="Novo Produto"
+            onClick={() => openModal()}
+            className="p-button-success" />
+
+          <Button icon="pi pi-download" className="download" />
+        </div>
+
+
         <InputText
           value={searchTerm}
+          id='productsFilter'
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
           placeholder="Buscar por nome ou ID"
           style={{ width: '300px', color: 'black' }}
         />
+
+
       </div>
 
-      <Button label="Novo Produto" onClick={() => openModal()} className="p-button-success" />
-
-      <ProductTable
-        products={filteredProducts || []}
-        onEdit={openModal}
-        onDelete={(id) => console.log(`Delete product with id: ${id}`)}
-      />
+      <div style={{ marginTop: '20px', marginLeft: '20px', marginRight: '20px', marginBottom: '20px', overflowX: 'auto' }}>
+        <ProductTable
+          products={filteredProducts || []}
+          onEdit={openModal}
+          onDelete={(id) => deleteProduct(id)}
+        />
+      </div>
 
       <Modal visible={modalVisible} onHide={closeModal} productId={selectedProductId} />
     </div>

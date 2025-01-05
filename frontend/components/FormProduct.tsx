@@ -110,6 +110,9 @@ export default function FormProduct({ productId, onClose }: FormProductProps) {
                                 value={field.value}
                                 onValueChange={(e) => field.onChange(e.value || 0)}
                                 mode="decimal"
+                                useGrouping={false}
+                                minFractionDigits={0}
+                                maxFractionDigits={0}
                                 inputClassName={fieldState.error ? 'p-invalid' : ''}
                             />
                             {fieldState.error && <small className="p-error">{fieldState.error.message}</small>}
